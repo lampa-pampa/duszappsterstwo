@@ -1,0 +1,11 @@
+.btn {
+    text-align: center;
+}
+
+.button-box {
+    margin-bottom: calc(3 * var(--unit));
+}
+
+.text-input {
+    cursor: text;
+}

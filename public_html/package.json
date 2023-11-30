@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "sw-precache": "^5.2.1"
+  }
+}

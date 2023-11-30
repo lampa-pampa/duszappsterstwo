@@ -1,0 +1,56 @@
+textarea {
+    resize: none;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.window .text-input, .window .button-box {
+    width: calc(46 * var(--unit));
+}
+
+.window .button-box.margin-bottom {
+    margin-bottom: calc(2.2 * var(--unit));
+}
+
+.window .button-box.margin-bottom-end {
+    margin-bottom: calc(3 * var(--unit));
+}
+
+.window .button-box.one-column {
+    grid-template-columns: 1fr;
+}
+
+.window .day-event, .participation-box {
+    display: grid;
+    justify-items: center;
+}
+
+.participation-box {
+    margin-top: calc(2 * var(--unit));
+}
+
+.window .day-event {
+    margin-bottom: calc(6 * var(--unit));
+}
+
+.window .day-event-title {
+    margin-bottom: calc(2 * var(--unit));
+}
+
+.window .day-event-title, .window .participation-message {
+    font-size: calc(3 * var(--unit));
+    padding: calc(1.5 * var(--unit));
+}
+
+.window .day-event-content {
+    line-height: 1.6em;
+    padding-inline: 1em;
+    min-height: 20em;
+}

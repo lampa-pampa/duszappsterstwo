@@ -1,0 +1,144 @@
+.window {
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: calc(1.5 * var(--unit));
+    place-items: stretch;
+    padding: calc(3 * var(--unit));
+}
+
+.cell.filler {
+    pointer-events: none;
+    cursor: auto;
+    opacity: .4;
+}
+
+.header, .selector-btn {
+    display: grid;
+    place-items: center;
+}
+
+.month-selector {
+    grid-column: 1 / 4;
+}
+
+.year-selector {
+    grid-column: -4 / -1;
+}
+
+.selector-arrow {
+    fill: var(--font-color);
+    transition: fill 500ms;
+}
+
+.selector { 
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--unit);
+    background-color: var(--button-bg-color);
+    border-radius: var(--unit);
+}
+
+.cell {
+    position: relative;
+    padding-block: 0.8em !important;
+    overflow: hidden;
+}
+
+.cell:nth-child(7n + 9), .header:nth-child(7n + 9) {
+    color: var(--main-theme-color);
+}
+
+.cell:not(.has-content) {
+    border-color: var(--button-bg-color);
+}
+.cell.cur-day {
+    background-color: var(--main-theme-color);
+    border-color: var(--font-color);
+    color: var(--font-color);
+}
+
+.cell.has-content::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 calc(100% - (1.2 * var(--unit))) 0;
+    background-color: var(--main-theme-color);
+    border-bottom: calc(0.1 * var(--unit)) solid var(--font-color);
+    transition: var(--theme-transition);
+}
+
+.cell.has-content.cur-day::after {
+    background-color: var(--button-bg-color);
+}
+
+.selector-btn svg{
+    height: 1em;
+    margin: var(--unit);
+}
+
+.header .full-name {
+    display: none;
+}
+
+.header .full-name, .header .short-name {
+    transition: var(--theme-transition);
+}
+
+.selector-btn:active .selector-arrow {
+    fill: var(--footer-font-color);
+    transition: none;
+}
+
+@media only screen and (min-width: 800px) {
+    .cell.has-content::after {
+        inset: 0 0 calc(100% - (1.5 * var(--unit))) 0;
+    }
+  
+    .window {
+        --window-width: calc(110 * var(--unit));
+        padding: calc(4 * var(--unit));
+        margin-block: calc(5 * var(--unit));
+    }
+
+    .month-selector {
+        grid-column: 1 / 3;
+    }
+
+    .year-selector {
+        grid-column: -3 / -1;
+    }
+
+    .cell {
+        font-size: calc(2.6 * var(--unit));
+    }
+
+    .selector {
+        font-size: calc(2.2 * var(--unit));
+    }
+
+    .selector-btn:hover .selector-arrow {
+        fill: var(--footer-font-color);
+        transition: none;
+    }
+
+    .header .full-name {
+        display: block;
+    }
+
+    .header .short-name {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .window {
+        --unit: 6px;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    .window {
+        --unit: 8px;
+    }
+}
